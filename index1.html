@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>เกมส์เติมคำ - LET'S PLAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Floating shapes -->
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div><div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+
+    <!-- Login Screen -->
+    <div class="screen active" id="loginScreen">
+        <div class="auth-container">
+            <img src="ปุ่ม button/logomain.png" alt="Let's Play เกมส์เติมคำ" class="game-logo">
+            <h2 class="auth-title">เข้าสู่ระบบ</h2>
+            <input type="text" id="loginUsername" class="auth-input" placeholder="ชื่อผู้ใช้">
+            <input type="password" id="loginPassword" class="auth-input" placeholder="รหัสผ่าน">
+            <button class="start-button" onclick="login()">เข้าสู่ระบบ</button>
+            <p class="auth-link">ยังไม่มีบัญชี? <span onclick="showRegister()">สมัครสมาชิก</span></p>
+        </div>
+    </div>
+
+    <!-- Register Screen -->
+    <div class="screen" id="registerScreen">
+        <div class="auth-container">
+            <img src="ปุ่ม button/logomain.png" alt="Let's Play เกมส์เติมคำ" class="game-logo">
+            <h2 class="auth-title">สมัครสมาชิก</h2>
+            <input type="text" id="registerUsername" class="auth-input" placeholder="ชื่อผู้ใช้">
+            <input type="password" id="registerPassword" class="auth-input" placeholder="รหัสผ่าน">
+            <input type="password" id="registerConfirmPassword" class="auth-input" placeholder="ยืนยันรหัสผ่าน">
+            <button class="start-button" onclick="register()">สมัครสมาชิก</button>
+            <p class="auth-link">มีบัญชีแล้ว? <span onclick="showLogin()">เข้าสู่ระบบ</span></p>
+        </div>
+    </div>
+
+    <!-- Character Selection Screen -->
+    <div class="screen" id="characterScreen">
+        <div class="character-container">
+            <h2 class="auth-title">เลือกตัวละครและตั้งชื่อ</h2>
+            <input type="text" id="playerName" class="auth-input" placeholder="ชื่อของคุณ">
+            <div class="character-grid">
+                <div class="character-option" data-character="1"><img src="css/01.jpg"></div>
+                <div class="character-option" data-character="2"><img src="css/02.jpg"></div>
+                <div class="character-option" data-character="3"><img src="css/03.jpg"></div>
+                <div class="character-option" data-character="4"><img src="css/04.jpg"></div>
+                <div class="character-option" data-character="5"><img src="css/05.jpg"></div>
+                <div class="character-option" data-character="6"><img src="css/06.jpg"></div>
+            </div>
+            <button class="start-button" onclick="confirmCharacter()" disabled>เริ่มเล่น</button>
+        </div>
+    </div>
+
+    <!-- Main Menu Screen -->
+    <div class="screen" id="mainMenu">
+        <div class="main-menu">
+            <div class="sound-icon" onclick="toggleSound()">🔊</div>
+            <button class="logout-button" onclick="logout()">ออกจากระบบ</button>
+            <img src="ปุ่ม button/logomain.png" alt="Let's Play เกมส์เติมคำ" class="game-logo">
+            <button class="start-button" onclick="showLevelSelect()">เริ่มเกม</button>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
